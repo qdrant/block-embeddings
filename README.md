@@ -1,4 +1,4 @@
-# Block Emneddings
+# Block Embeddingsg
 
 This project is a proof of concept of a technique of dense embeddings transformation, which is aimed to amplify dataset-specific features of the embeddings.
 
