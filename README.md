@@ -152,5 +152,4 @@ embedder = ImageEmbedding(model_name="Qdrant/clip-ViT-B-32-vision")
 embeddings = np.array(list(embedder.embed([image_path])))
 blocks_embeddings = encoder(torch.from_numpy(embeddings)).detach().numpy()
 
-# blocks_embeddings is a numpy array of shape (1, BLOCKS, BLOCK_SIZE)
 ```
