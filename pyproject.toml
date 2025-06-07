@@ -1,0 +1,32 @@
+[project]
+name = "embeddings-confidence"
+version = "0.1.0"
+description = "A project for working with embeddings and confidence scores"
+requires-python = ">=3.9"
+dependencies = [
+    "fastembed>=0.7.0",
+    "lightning>=2.5.1.post0",
+    "matplotlib>=3.9.4",
+    "numpu>=0.1.1",
+    "qdrant-client>=1.14.1",
+    "scipy>=1.10.1",
+    "tensorboardx>=2.6.2.2",
+    "torch>=2.5.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"] 
+
+[dependency-groups]
+dev = [
+    "ipdb>=0.13.13",
+    "pytest>=8.3.5",
+]
