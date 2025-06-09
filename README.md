@@ -53,6 +53,17 @@ By studying which features are associated with which objects, it might be possib
 Having a set of interpretable features, it might be possible to tune query to point the search to the desired direction.
 In combination with other techniques, like [exploration search](https://qdrant.tech/articles/vector-similarity-beyond-search/#discovery), it might be possible to build personalized search and recommendation systems.
 
+## Training
+
+To train block embeddings for a specific dataset, we need to capture the semantic structure of the data. This structure is naturally encoded in the similarity matrix between vectors, similar to how dimensionality reduction techniques like UMAP reveal clusters in high-dimensional data.
+
+There are following components to keep in mind to understand the training process:
+
+1. **Data Collection**: We use Qdrant API to obtain a similarity matrix for a subset of the collection. This matrix represents the semantic relationships between vectors in the original embedding space.
+
+2. **Model Architecture**: The model takes dense embeddings as input and transforms them into block embeddings, where each block is processed through a separate SoftMax function.
+
+3. **Training Objective**: We use triplet loss to train the model. The objective is to make the transformed embeddings reproduce the same score differences as in the original similarity matrix. This means that if two vectors were similar in the original space, they should remain similar in the transformed space, and vice versa.
 
 ## Setup
 
